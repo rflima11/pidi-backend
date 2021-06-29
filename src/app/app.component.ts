@@ -2,9 +2,16 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+  <app-menu></app-menu>
+  <br>
+  <br>
+    <div class="container">
+      <router-outlet></router-outlet>
+      <router-outlet name="public"></router-outlet>
+    </div>`,
+  styles: [],
 })
 export class AppComponent {
-  title = 'health-note-web';
+  title = 'Health Note';
 }

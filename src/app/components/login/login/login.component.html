@@ -1,0 +1,29 @@
+    <p-card>
+    <form [formGroup]="formulario">
+     
+     <div class="p-field p-grid">
+      <label for="usuario" class="p-col-fixed" style="width:100px">Usuário</label>
+        <div class="p-col">
+          <input type="text" formControlName="usuario" id="usuario" />
+        </div>
+     </div>
+     <br>
+     <div class="p-field p-grid">
+      <label for="senha" class="form-label">Senha</label>       
+       <div class="p-col">
+          <input type="password" formControlName="senha" id="senha" />
+        </div>
+     </div>
+     <br>
+     <p-checkbox label="Medico" [binary]="true" [(ngModel)]="isMedico" [ngModelOptions]="{standalone: true}" (click)="carregarMedicos()"
+     ></p-checkbox>
+     <p-checkbox label="Paciente" [binary]="true" [(ngModel)]="isPaciente"  [ngModelOptions]="{standalone: true}" (click)="carregarPacientes()"
+     ></p-checkbox>
+     <br>
+ 
+     <br>
+      <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+      <a href="/nova-conta" class="btn btn-outline-primary">Criar Conta</a>
+    </form>
+</p-card>
+ 

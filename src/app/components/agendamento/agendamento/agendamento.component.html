@@ -1,0 +1,48 @@
+<p-card>
+    <h2>Agendamento de Consultas</h2>
+
+    <hr>
+    <br>
+    <form [formGroup]="formulario"> 
+    <div class="p-fluid">
+        <div class="p-field p-grid">
+            <label for="Médico" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Médico</label>
+            <div class="p-col-12 p-md-10">
+                <select class="form-select" aria-label="Default select example" formControlName="medico">
+                    <option selected>Escolha seu médico</option>
+                    <option *ngFor="let medico of medicos" [value]="medico.id">{{ medico.nome }}</option>
+
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="p-field p-grid">
+            <label for="especialidade" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Especialidade</label>
+            <div class="p-col-6 p-md-10">
+                <select class="form-select" aria-label="Default select example" formControlName="especialidade">
+                    <option selected>Escolha a especialidade</option>
+                    <option *ngFor="let especialidade of especialidades" [value]="especialidade">{{ especialidade }}</option>
+                  </select>
+            </div>
+           <br>
+           <br>
+
+        </div>
+    </div>
+
+    <div class="p-fluid p-grid">
+
+    <div class="p-field p-col-6 p-md-2">
+            <label for="basic">Data: </label>
+            <p-calendar inputId="basic" formControlName="data" [inline]="true" [locale]="calendar_br"></p-calendar>
+        </div>
+    </div>
+    <br>
+        <div class="p-field p-grid">
+            <div class="p-col-3">
+                <button pButton type="button" label="Agendar" (click)="agendar()"></button>
+            </div>
+        </div>
+    </form>
+    
+</p-card>
